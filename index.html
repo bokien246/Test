@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ToDoList</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="sidebar">
+    <h5 class="text-center mb-4">ToDoList.com</h5>
+    <a href="#"><i class="bi bi-house-door me-2"></i>Home</a>
+    <a href="#" class="active"><i class="bi bi-search me-2"></i>Search</a>
+    <a href="#"><i class="bi bi-folder me-2"></i>My Projects</a>
+    <a href="#"><i class="bi bi-calendar3 me-2"></i>My Works</a>
+    <a href="#"><i class="bi bi-three-dots me-2"></i>More</a>
+
+    <div class="user-info">
+      <i class="bi bi-person-circle me-2"></i>Nguyen Trung Kien
+    </div>
+  </div>
+
+  <div class="content">
+    <h5>Search</h5>
+    <p class="text-muted">Events</p>
+
+    <div class="search-bar mt-4">
+      <div class="input-group">
+        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+        <input id="searchInput" type="text" class="form-control" placeholder="Search by name, date,...." oninput="filterEvents()">
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          <i class="bi bi-list-task me-1"></i>Status
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">All</a></li>
+          <li><a class="dropdown-item" href="#">Completed</a></li>
+          <li><a class="dropdown-item" href="#">Pending</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-4" id="resultBox">
+       
+
+      <!-- Kết quả tìm kiếm sẽ hiện tại đây -->
+    </div>
+     <div id="detailBox"></div>
+  </div>
+<!-- Modal -->
+<!-- Modal -->
+<div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-calendar-check-fill me-2"></i>EVENT DETAILS</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+          <tbody>
+            <tr><th>Event Name:</th><td id="modalName"></td></tr>
+            <tr><th>Date:</th><td id="modalTime"></td></tr>
+            <tr><th>Location:</th><td id="modalLocation"></td></tr>
+            <tr><th>Notes:</th><td id="modalNotes"></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success">Save</button>
+        <button class="btn btn-info text-white" data-bs-dismiss="modal">Back</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
